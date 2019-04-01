@@ -8,9 +8,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity {
+    List<BankCard> bankCardList= new ArrayList<>();
     @Override
+    protected void onCreate (Bundle savedlnstanceState){
+        super.onCreate(savedlnstanceState);
+        setContentView(R.layout.activity_main);
+        bankCardList.add(new BankCard("Vana","8723 5467 8790 6734", 1000f,"25.02.2017",1234));
+        bankCardList.add(new BankCard("Dana","1223 5467 3456 6734", 1000f,"21.02.2017",1234));
+        bankCardList.add(new BankCard("Sana","1223 9834 8710 6734", 1000f,"21.02.2017",1234));
+    }
+
+   /* @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -25,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 
     @Override
     protected void onStart() {
